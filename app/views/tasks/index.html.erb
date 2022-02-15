@@ -1,11 +1,13 @@
-<ul>
+<h1>Tasks</h1>
+
+<ul class="mt-5">
   <% @tasks.each do |task| %>
-    <li>
+    <li class="d-flex align-items-center gap-2 mb-3">
       <%= link_to task_path(task) do %>
-        <% task.title %>
+        <% task.title%>
       <% end %>
-      <%= link_to " Delete?", task_path(task), method: "delete" %>
+      <%= link_to " Delete?", task_path(task), method: "delete", class: "btn btn-danger" %>
     </li>
   <% end %>
-  <%= link_to "Add new task", new_task_path %>
+  <%= link_to "Add new task", new_task_path, class: "btn btn-primary" %>
 </ul>
